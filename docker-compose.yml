@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  bt:
+    build: .
+    container_name: bt
+    restart: always
+    ports:
+      - "20:20"
+      - "21:21"
+      - "80:80"
+      - "443:443"
+      - "8888:8888"
+    volumes:
+      - "./website:/www/wwwroot"
+      - "./database:/www/server/data"
+      - "./backup:/www/backup"
+
